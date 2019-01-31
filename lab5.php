@@ -52,6 +52,11 @@
     </div>
 
     <div class="container-fluid mt-3">
+        <?php
+            // $_GET['aralia']
+            if (isset($_GET['aralia'])) {
+               if ($_GET['aralia'] == 'yes') {
+        ?>
         <h3 class="text-white p-3 shadow">Aralia</h3>
         <div class="row mb-3">
             <div class="col-sm-12 col-md-6 col-lg-4">
@@ -68,6 +73,10 @@
                 </div>
             </div>
         </div>
+        <?php
+                }  //end if aralia equals yes
+            }  //end if isset
+        ?>
 
         <h3 class="p-3 shadow">Arborvitae</h3>
         <div class="row mb-3">
