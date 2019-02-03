@@ -47,16 +47,34 @@
                     guidelines established by the Arbor Day Foundation's Tree Campus USA Program, of which Clark College is a proud awardee. The committee serves to provide guidance on issues such as: campus tree health, opportunities to plant additional species and varieties, preserving existing trees in the face of growing needs
                     for building expansion, as well as planning campus tree-related projects and celebrations. Our goal is
                     to preserve and expand the Clark College Arboretum for the benefit of all who find themselves on the
-                    campus today and for many years to come.</p>
+                    campus today and for many years to come..</p>
         </div>
     </div>
 
     <div class="container-fluid mt-3">
-        <?php
+        <?php if($_SERVER['REQUEST_METHOD'] == "GET"){
+
             // $_GET['aralia']
+            $flag1 = false;
+            $flag2 = false;
+            $flag3 = false;
+
             if (isset($_GET['aralia'])) {
                if ($_GET['aralia'] == 'yes') {
+                   $flag1 = true;
+                } //end if aralia equals yes
+                elseif($_GET['aralia'] == 'no') {
+                    $flag1 = false;
+                } //end if aralia equals no
+            } //end if aralia is set
+            
+            if (!isset($_GET['aralia'])){
+                $flag1 = true;
+            } //end if aralia is not set
+            if ($flag1 == true){ 
+
         ?>
+
         <h3 class="text-white p-3 shadow">Aralia</h3>
         <div class="row mb-3">
             <div class="col-sm-12 col-md-6 col-lg-4">
@@ -73,10 +91,27 @@
                 </div>
             </div>
         </div>
+
         <?php
-                }  //end if aralia equals yes
-            }  //end if isset
-        ?>
+            } //end if flag1 equals true
+        
+        // $_GET['arborvitae']
+
+            if (isset($_GET['arborvitae'])) {
+               if ($_GET['arborvitae'] == 'yes') {
+                   $flag2 = true;
+                } //end if arborvitae equals yes
+                elseif($_GET['arborvitae'] == 'no') {
+                    $flag2 = false;
+                } //end if arborvitae equals no
+            } //end if arborvitae is set
+            
+            if (!isset($_GET['arborvitae'])){
+                $flag2 = true;
+            } //end if arborvitae is not set
+
+            if ($flag2 == true){ 
+        // ?>
 
         <h3 class="p-3 shadow">Arborvitae</h3>
         <div class="row mb-3">
@@ -94,6 +129,26 @@
                 </div>
             </div>
         </div>
+        <?php
+            } //end if flag2 equals true
+
+            // $_GET['ash']
+
+            if (isset($_GET['ash'])) {
+               if ($_GET['ash'] == 'yes') {
+                   $flag3 = true;
+                } //end if ash equals yes
+                elseif($_GET['ash'] == 'no') {
+                    $flag3 = false;
+                } //end if ash equals no
+            } //end if ash is set
+            
+            if (!isset($_GET['ash'])){
+                $flag3 = true;
+            } //end if ash is not set
+
+             if ($flag3 == true) { 
+         ?>
 
         <h3 class="p-3 shadow">Ash</h3>
         <div class="row mb-3">
@@ -109,7 +164,7 @@
                     </div>
                 </div>
             </div>
-
+            
             <div class="col-sm-12 col-md-6 col-lg-4">
                 <div class="card mt-3 mb-3 shadow">
                     <div class="card-header shadow">
@@ -136,6 +191,10 @@
                 </div>
             </div>
         </div>
+        <?php
+            } //end if flag3 equals true
+        } //end if request method equals get
+        ?>
 </div>
 
 <!-- jQuery -->
