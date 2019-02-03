@@ -62,7 +62,7 @@
             if (isset($_GET['aralia'])) {
                if ($_GET['aralia'] == 'yes') {
                    $flag1 = true;
-                } //end if aralia equals yes
+                } //end if aralia equals yes 
                 elseif($_GET['aralia'] == 'no') {
                     $flag1 = false;
                 } //end if aralia equals no
